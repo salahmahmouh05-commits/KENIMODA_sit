@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>✨ Look Modeste Élégant — Kenimoda</title>
+  <meta name="description" content="Ensemble 2 pièces Bebe Yaka, tissu Tencel haute qualité. 5 couleurs, tailles S-XL. Livraison partout au Maroc." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink:    #12090F;
+      --cream:  #F9F4EE;
+      --warm:   #F0E8DC;
+      --gold:   #B8924A;
+      --gold2:  #D4AC6E;
+      --red:    #C8382A;
+      --red2:   #E04535;
+      --sand:   #E8DDD0;
+      --muted:  #9A8A7A;
+      --wa:     #25D366;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* ── STICKY BAR ── */
+    .topbar {
+      background: var(--ink);
+      color: var(--gold2);
+      text-align: center;
+      font-size: .72rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: .55rem 1rem;
+      font-weight: 500;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(249,244,238,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--sand);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 2.5rem;
+    }
+    .logo { display:flex; align-items:center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem; font-weight: 700;
+      color: var(--ink); text-decoration: none; letter-spacing: 1px;
+    }
+    .logo em { color: var(--gold); font-style: italic; }
+    .nav-right { display: flex; align-items: center; gap: 1.2rem; }
+    .nav-link { font-size: .8rem; color: var(--muted); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: color .2s; }
+    .nav-link:hover { color: var(--ink); }
+    .nav-cta {
+      background: var(--red); color: #fff; border: none;
+      padding: .55rem 1.3rem; border-radius: 30px;
+      font-size: .8rem; font-weight: 600; cursor: pointer;
+      font-family: 'Outfit', sans-serif; letter-spacing: .5px;
+      text-decoration: none; display: inline-block; transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--red2); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr;
+      min-height: 92vh; background: var(--ink);
+      position: relative; overflow: hidden;
+    }
+    .hero-bg-pattern {
+      position: absolute; inset: 0; opacity: .04;
+      background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+      background-size: 20px 20px;
+    }
+    .hero-glow {
+      position: absolute; width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,146,74,.18) 0%, transparent 70%);
+      top: -100px; right: -100px; pointer-events: none;
+    }
+
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 4rem 3.5rem 4rem 4rem;
+      position: relative; z-index: 2;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(184,146,74,.12); border: 1px solid rgba(184,146,74,.3);
+      color: var(--gold2); font-size: .68rem; letter-spacing: 2.5px;
+      text-transform: uppercase; padding: .35rem 1rem;
+      border-radius: 20px; margin-bottom: 1.8rem; width: fit-content;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 700; color: #fff;
+      line-height: 1.05; margin-bottom: .6rem;
+    }
+    .hero-title em { color: var(--gold2); font-style: italic; font-weight: 400; }
+    .hero-sub {
+      color: rgba(255,255,255,.55); font-size: 1rem;
+      line-height: 1.75; max-width: 380px; margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+    .hero-price-row {
+      display: flex; align-items: baseline; gap: .8rem; margin-bottom: 2rem;
+    }
+    .hero-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem; font-weight: 700; color: var(--gold2);
+    }
+    .hero-price-note { font-size: .8rem; color: rgba(255,255,255,.4); }
+    .hero-btns { display: flex; flex-direction: column; gap: .8rem; max-width: 340px; }
+    .btn-main {
+      background: var(--red); color: #fff; border: none;
+      border-radius: 6px; padding: 1rem 2rem;
+      font-size: 1rem; font-weight: 600; cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      text-decoration: none; display: flex; align-items: center;
+      justify-content: center; gap: .6rem;
+      transition: all .2s; letter-spacing: .3px;
+    }
+    .btn-main:hover { background: var(--red2); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(200,56,42,.35); }
+    .btn-wa {
+      background: var(--wa); color: #fff; border: none;
+      border-radius: 6px; padding: .9rem 2rem;
+      font-size: .95rem; font-weight: 600; cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      text-decoration: none; display: flex; align-items: center;
+      justify-content: center; gap: .6rem; transition: all .2s;
+    }
+    .btn-wa:hover { background: #1da851; transform: translateY(-1px); }
+    .hero-trust {
+      display: flex; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap;
+    }
+    .trust-badge {
+      display: flex; align-items: center; gap: .4rem;
+      font-size: .75rem; color: rgba(255,255,255,.4); font-weight: 300;
+    }
+    .trust-badge span { font-size: 1rem; }
+
+    .hero-right {
+      position: relative; overflow: hidden;
+    }
+    .hero-img-main {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: top center;
+      transition: transform 6s ease;
+    }
+    .hero-right:hover .hero-img-main { transform: scale(1.03); }
+    .hero-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(18,9,15,.4) 0%, transparent 40%);
+    }
+    .color-dots {
+      position: absolute; bottom: 2rem; left: 50%;
+      transform: translateX(-50%);
+      display: flex; gap: .6rem; background: rgba(18,9,15,.7);
+      backdrop-filter: blur(8px); padding: .6rem 1rem; border-radius: 30px;
+    }
+    .cdot {
+      width: 22px; height: 22px; border-radius: 50%;
+      cursor: pointer; border: 2px solid transparent;
+      transition: all .2s;
+    }
+    .cdot.active, .cdot:hover { border-color: #fff; transform: scale(1.15); }
+
+    /* ── MARQUEE ── */
+    .marquee { background: var(--gold); padding: .7rem 0; overflow: hidden; }
+    .marquee-track {
+      display: flex; gap: 3rem;
+      animation: marquee 20s linear infinite; white-space: nowrap;
+    }
+    .marquee-track span {
+      font-size: .72rem; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--ink); flex-shrink: 0;
+    }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── PRODUCT SECTION ── */
+    .product-sec {
+      padding: 5rem 4rem;
+      background: #fff;
+    }
+    .sec-label {
+      font-size: .7rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); font-weight: 600; margin-bottom: .6rem;
+    }
+    .sec-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-weight: 700; color: var(--ink);
+      margin-bottom: .3rem; line-height: 1.1;
+    }
+    .sec-sub { color: var(--muted); font-size: .92rem; margin-bottom: 2.5rem; font-weight: 300; }
+
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: .8rem;
+      margin-bottom: 3rem;
+    }
+    .gallery-item {
+      border-radius: 10px; overflow: hidden;
+      aspect-ratio: 3/4; cursor: pointer;
+      border: 2px solid transparent; transition: all .2s;
+      position: relative;
+    }
+    .gallery-item.active, .gallery-item:hover { border-color: var(--gold); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .color-label {
+      position: absolute; bottom: .4rem; left: 50%; transform: translateX(-50%);
+      background: rgba(18,9,15,.75); color: #fff;
+      font-size: .62rem; padding: .2rem .5rem; border-radius: 10px;
+      white-space: nowrap; font-weight: 500;
+    }
+
+    /* SPECS */
+    .specs-row {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .spec-card {
+      background: var(--warm); border-radius: 12px;
+      padding: 1.3rem; text-align: center;
+      border: 1px solid var(--sand);
+    }
+    .spec-icon { font-size: 1.6rem; margin-bottom: .5rem; }
+    .spec-val { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--ink); }
+    .spec-lbl { font-size: .72rem; color: var(--muted); margin-top: .2rem; font-weight: 300; }
+
+    /* ORDER BOX */
+    .order-box {
+      background: var(--ink); border-radius: 16px;
+      padding: 2.5rem; display: flex;
+      align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .order-box-left {}
+    .order-price-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem; font-weight: 700; color: var(--gold2);
+      line-height: 1;
+    }
+    .order-price-note { color: rgba(255,255,255,.45); font-size: .82rem; margin-top: .3rem; font-weight: 300; }
+    .order-btns { display: flex; flex-direction: column; gap: .7rem; min-width: 280px; }
+
+    /* ── PROMO ── */
+    .promo-sec {
+      background: linear-gradient(135deg, #1a0d2e 0%, #2d1052 100%);
+      padding: 3.5rem 4rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .promo-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; color: #fff; margin-bottom: .5rem; font-weight: 700;
+    }
+    .promo-left p { color: rgba(255,255,255,.6); font-size: .9rem; font-weight: 300; }
+    .promo-code-box {
+      background: var(--gold); color: var(--ink);
+      font-weight: 700; padding: .5rem 1.3rem;
+      border-radius: 8px; display: inline-block;
+      margin-top: .8rem; letter-spacing: 3px; font-size: 1.1rem;
+    }
+    .promo-stats { display: flex; gap: 1.2rem; }
+    .pstat {
+      text-align: center; background: rgba(255,255,255,.08);
+      border-radius: 12px; padding: 1rem 1.4rem;
+    }
+    .pstat strong {
+      display: block; font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; color: var(--gold2); font-weight: 700;
+    }
+    .pstat span { color: rgba(255,255,255,.5); font-size: .72rem; font-weight: 300; }
+
+    /* ── TESTIMONIALS ── */
+    .testi-sec { padding: 5rem 4rem; background: var(--cream); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
+    .testi-card {
+      background: #fff; border-radius: 14px;
+      border: 1px solid var(--sand); padding: 1.6rem;
+    }
+    .testi-stars { color: var(--gold); font-size: .95rem; margin-bottom: .8rem; letter-spacing: 2px; }
+    .testi-text {
+      font-size: .88rem; line-height: 1.7; color: #4a3a2e;
+      font-style: italic; margin-bottom: 1rem; font-weight: 300;
+    }
+    .testi-author { font-size: .8rem; font-weight: 600; color: var(--ink); }
+    .testi-city { font-size: .72rem; color: var(--muted); }
+
+    /* ── CONTACT ── */
+    .contact-sec {
+      background: var(--ink); padding: 5rem 4rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .contact-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; color: #fff; margin-bottom: 1rem; font-weight: 700;
+    }
+    .contact-left p { color: rgba(255,255,255,.5); line-height: 1.7; margin-bottom: 1.8rem; font-size: .9rem; font-weight: 300; }
+    .cinfo-list { display: flex; flex-direction: column; gap: .9rem; }
+    .cinfo-item { display: flex; align-items: center; gap: .8rem; color: rgba(255,255,255,.7); font-size: .88rem; }
+    .cinfo-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: rgba(184,146,74,.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: .9rem; }
+    .contact-form input, .contact-form textarea {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px; padding: .9rem 1.1rem;
+      color: #fff; font-family: 'Outfit', sans-serif;
+      font-size: .9rem; outline: none; resize: none;
+      transition: border-color .2s; width: 100%; font-weight: 300;
+    }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(255,255,255,.25); }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--gold); }
+    .form-wa-btn {
+      background: var(--wa); color: #fff; border: none;
+      border-radius: 10px; padding: 1rem;
+      font-size: .95rem; font-weight: 600; cursor: pointer;
+      font-family: 'Outfit', sans-serif; transition: background .2s;
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+    }
+    .form-wa-btn:hover { background: #1da851; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0a0508; padding: 1.5rem 4rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: .8rem;
+    }
+    .footer.logo { display:flex; align-items:center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 700; color: var(--gold);
+    }
+    .footer-logo em { color: var(--red2); font-style: italic; }
+    footer p { color: rgba(255,255,255,.25); font-size: .78rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { height: 380px; }
+      .hero-left { padding: 2.5rem 1.5rem; }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .specs-row { grid-template-columns: repeat(2, 1fr); }
+      .product-sec, .promo-sec, .testi-sec { padding: 3rem 1.5rem; }
+      .contact-sec { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .promo-stats { flex-wrap: wrap; }
+      footer { padding: 1.5rem; }
+      nav { padding: .9rem 1.2rem; }
+      .nav-right .nav-link { display: none; }
+      .order-box { flex-direction: column; }
+      .order-btns { width: 100%; }
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1765728384575493');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1765728384575493&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">✦ Livraison partout au Maroc · Paiement à la livraison · 24–48h ✦</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo"><svg width="28" height="28" viewBox="0 0 64 64" style="vertical-align:middle;margin-right:6px" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8C20 8 10 16 8 26c4-2 8-2 12 0-6 4-10 10-10 18 0 2 4-2 8-6 0 6 2 12 8 16 2-4 2-10 0-14 4 4 10 6 16 4-2-4-6-8-10-10 6 0 12-4 14-10-4 0-8 2-10 4 2-4 2-10-4-14 6 0 10 4 12 8 2-8-2-14-12-14z" fill="%23B8924A"/><path d="M28 14c0 0 2-4 8-4" stroke="%23B8924A" stroke-width="2" stroke-linecap="round"/></svg>Keni<em>moda</em></a>
+  <div class="nav-right">
+    <a href="#produit" class="nav-link">Produit</a>
+    <a href="#avis" class="nav-link">Avis</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    <a href="#contact" class="nav-cta">Commander →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">✦ Collection 2026 · Nouveau</div>
+    <h1 class="hero-title">
+      Look Modeste Élégant<br><em>Bebe Yaka</em><br>Takım
+    </h1>
+    <p class="hero-sub">
+      Ensemble 2 pièces en tissu Tencel premium — blouse Bebe Yaka + jupe longue.<br>
+      5 couleurs · S M L XL · livré chez toi en 48h 🇲🇦
+    </p>
+    <div class="hero-price-row">
+      <div class="hero-price">550 DH</div>
+      <div class="hero-price-note">Paiement à la livraison</div>
+    </div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-main">
+        📩 Commander maintenant
+      </a>
+      <a href="#contact" class="btn-wa">
+        📋 Remplir le formulaire
+      </a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-badge"><span>🚚</span> Livraison Maroc</div>
+      <div class="trust-badge"><span>💳</span> Paiement livraison</div>
+      <div class="trust-badge"><span>⭐</span> 4.9/5</div>
+      <div class="trust-badge"><span>🔄</span> Retour facile</div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img id="heroMainImg" class="hero-img-main"
+      src="https://cdn.youcan.shop/stores/ff5389aab45cf830c1323f4935d241b5/others/Fx9vLwSca2B0Z32UTKRe6OOAh07ouc6kcb9nZ5G8.jpg"
+      alt="✨ Look Modeste Élégant — Kenimoda" />
+    <div class="hero-img-overlay"></div>
+    <div class="color-dots">
+      <div class="cdot active" style="background:#C9A882" title="Beige"
+        onclick="switchHeroColor(0,this)"></div>
+      <div class="cdot" style="background:#5B6B8A" title="Bleu"
+        onclick="switchHeroColor(1,this)"></div>
+      <div class="cdot" style="background:#1A1A1A" title="Noir"
+        onclick="switchHeroColor(2,this)"></div>
+      <div class="cdot" style="background:#8B3A3A" title="Bordeaux"
+        onclick="switchHeroColor(3,this)"></div>
+      <div class="cdot" style="background:#7A8C6A" title="Kaki"
+        onclick="switchHeroColor(4,this)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>✦ Tissu Tencel High Quality</span>
+    <span>✦ Livraison partout au Maroc</span>
+    <span>✦ Paiement à la livraison</span>
+    <span>✦ 5 couleurs disponibles</span>
+    <span>✦ Tailles S M L XL</span>
+    <span>✦ +500 clientes satisfaites</span>
+    <span>✦ Tissu Tencel High Quality</span>
+    <span>✦ Livraison partout au Maroc</span>
+    <span>✦ Paiement à la livraison</span>
+    <span>✦ 5 couleurs disponibles</span>
+    <span>✦ Tailles S M L XL</span>
+    <span>✦ +500 clientes satisfaites</span>
+  </div>
+</div>
+
+<!-- PRODUCT DETAIL -->
+<section class="product-sec" id="produit">
+  <div class="sec-label">Kenimoda · Look Modeste Élégant</div>
+  <h2 class="sec-title">Toutes les couleurs</h2>
+  <p class="sec-sub">Clique sur une photo pour voir le détail — kol couleur zouina b rassha</p>
+
+  <div class="gallery-grid">
+    <div class="gallery-item active" onclick="setActive(this,0)">
+      <img src="https://cdn.youcan.shop/stores/ff5389aab45cf830c1323f4935d241b5/others/Fx9vLwSca2B0Z32UTKRe6OOAh07ouc6kcb9nZ5G8.jpg" alt="Beige" />
+      <div class="color-label">Beige</div>
+    </div>
+    <div class="gallery-item" onclick="setActive(this,1)">
+      <img src="https://cdn.youcan.shop/stores/ff5389aab45cf830c1323f4935d241b5/others/SkhdqpZXw7NDlKZyo2BSlqcrlP7RUHv3vNu5MDLp.jpg" alt="Bleu ardoise" />
+      <div class="color-label">Bleu</div>
+    </div>
+    <div class="gallery-item" onclick="setActive(this,2)">
+      <img src="https://cdn.youcan.shop/stores/ff5389aab45cf830c1323f4935d241b5/others/KIAsM8MR4qUXyKEVMCCHHO5XUwQL9HVxtUR5A7Pi.jpg" alt="Noir" />
+      <div class="color-label">Noir</div>
+    </div>
+    <div class="gallery-item" onclick="setActive(this,3)">
+      <img src="https://cdn.youcan.shop/stores/ff5389aab45cf830c1323f4935d241b5/others/zNcHth6rmfzmDAu7LUhIMN0aUpj0uFcQyMAjWiCu.jpg" alt="Bordeaux" />
+      <div class="color-label">Bordeaux</div>
+    </div>
+    <div class="gallery-item" onclick="setActive(this,4)">
+      <img src="https://cdn.youcan.shop/stores/ff5389aab45cf830c1323f4935d241b5/others/PJiuPPZCIbhDCuEtGs4kAYLWoaDLJdIYTxEwSIZ0.jpg" alt="Kaki" />
+      <div class="color-label">Kaki</div>
+    </div>
+  </div>
+
+  <div class="specs-row">
+    <div class="spec-card">
+      <div class="spec-icon">📏</div>
+      <div class="spec-val">48 cm</div>
+      <div class="spec-lbl">Longueur blouse</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">📐</div>
+      <div class="spec-val">92 cm</div>
+      <div class="spec-lbl">Longueur jupe</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">🌿</div>
+      <div class="spec-val">Tencel</div>
+      <div class="spec-lbl">Tissu premium</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">📦</div>
+      <div class="spec-val">S–XL</div>
+      <div class="spec-lbl">Tailles disponibles</div>
+    </div>
+  </div>
+
+  <div class="order-box">
+    <div class="order-box-left">
+      <div class="order-price-big">550 DH</div>
+      <div class="order-price-note">🚚 Livraison incluse · Paiement à la livraison</div>
+    </div>
+    <div class="order-btns">
+      <a href="#contact" class="btn-main">
+        📩 Commander maintenant
+      </a>
+      <a href="#contact" class="btn-wa">
+        📋 Remplir le formulaire
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<div class="promo-sec">
+  <div class="promo-left">
+    <h2>Commande maintenant,<br>reçois en 48h ⚡</h2>
+    <p>Code promo pour -10% sur ta première commande</p>
+    <div class="promo-code-box">KENIMODA10</div>
+  </div>
+  <div class="promo-stats">
+    <div class="pstat"><strong>500+</strong><span>Clientes</span></div>
+    <div class="pstat"><strong>48h</strong><span>Livraison</span></div>
+    <div class="pstat"><strong>4.9★</strong><span>Avis</span></div>
+    <div class="pstat"><strong>5</strong><span>Couleurs</span></div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec" id="avis">
+  <div class="sec-label">Avis clients</div>
+  <h2 class="sec-title">Ce que disent nos clientes</h2>
+  <p class="sec-sub">Avis réels — chno galat les clientes dyalna 🇲🇦</p>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Waaaaw le takım jab l3aqel ! La qualité du tissu Tencel est incroyable, très doux. Je l'ai commandé en beige et je suis bluffée."</p>
+      <div class="testi-author">Salma B.</div>
+      <div class="testi-city">Casablanca</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Livraison rapide, l'emballage était soigné. Le bleu ardoise est encore plus beau en vrai. Je recommande à toutes mes amies !"</p>
+      <div class="testi-author">Nadia M.</div>
+      <div class="testi-city">Rabat</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"3jbni bzzaf l design dial bebe yaka. Taille parfaite, khdmet M w waqfet mzyana. Merci Kenimoda !"</p>
+      <div class="testi-author">Imane K.</div>
+      <div class="testi-city">Marrakech</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="contact-left">
+    <h2>Contacte<br><span style="color:var(--gold2)">Kenimoda</span></h2>
+    <p>Des questions sur une taille, la disponibilité ou ta commande ? Hna dyalk — on répond vite sur WhatsApp !</p>
+    <div class="cinfo-list">
+      <div class="cinfo-item">
+        <div class="cinfo-icon">💬</div>
+        <span>WhatsApp : +212 612 449 474</span>
+      </div>
+      <div class="cinfo-item">
+        <div class="cinfo-icon">📸</div>
+        <span>Instagram : @kenimoda.ma</span>
+      </div>
+      <div class="cinfo-item">
+        <div class="cinfo-icon">🌐</div>
+        <span>kenimoda.com</span>
+      </div>
+      <div class="cinfo-item">
+        <div class="cinfo-icon">📍</div>
+        <span>Livraison partout au Maroc 🇲🇦</span>
+      </div>
+    </div>
+  </div>
+  <form class="contact-form" action="https://formspree.io/f/mwvzjgqe" method="POST" id="orderForm">
+    <input type="text" name="prenom" placeholder="Ton prénom — smiytek" required />
+    <input type="tel" name="whatsapp" placeholder="Numéro WhatsApp — raqm dyalek" required />
+    <input type="text" name="couleur_taille" placeholder="Couleur + taille souhaitée (ex: Beige · M)" required />
+    <textarea name="message" rows="3" placeholder="Ton message — ktbi hnaya..."></textarea>
+    <input type="hidden" name="produit" value="✨ Look Modeste Élégant — 550 DH" />
+    <button type="submit" class="form-wa-btn" id="submitBtn">
+      📩 Envoyer ma commande
+    </button>
+    <div id="formSuccess" style="display:none;background:rgba(37,211,102,.15);border:1px solid #25D366;border-radius:10px;padding:1rem;text-align:center;color:#25D366;font-weight:500;">
+      ✅ Commande envoyée ! On te contacte bientôt sur WhatsApp 🎉
+    </div>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><svg width="22" height="22" viewBox="0 0 64 64" style="vertical-align:middle;margin-right:5px" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8C20 8 10 16 8 26c4-2 8-2 12 0-6 4-10 10-10 18 0 2 4-2 8-6 0 6 2 12 8 16 2-4 2-10 0-14 4 4 10 6 16 4-2-4-6-8-10-10 6 0 12-4 14-10-4 0-8 2-10 4 2-4 2-10-4-14 6 0 10 4 12 8 2-8-2-14-12-14z" fill="%23B8924A"/></svg>Keni<em>moda</em></div>
+  <p>© 2026 Kenimoda — Mode Féminine Maroc 🇲🇦</p>
+  <p style="color:rgba(255,255,255,.2);font-size:.72rem;">kenimoda.com</p>
+</footer>
+
+<script>
+  /* ── Photos URLs — ⚠️ REMPLACE PAR TES VRAIES URLs YOUCAN MEDIA ── */
+  const PHOTOS = [
+    'https://cdn.youcan.shop/stores/ff5389aab45cf830c1323f4935d241b5/others/Fx9vLwSca2B0Z32UTKRe6OOAh07ouc6kcb9nZ5G8.jpg',
+    'https://cdn.youcan.shop/stores/ff5389aab45cf830c1323f4935d241b5/others/SkhdqpZXw7NDlKZyo2BSlqcrlP7RUHv3vNu5MDLp.jpg',
+    'https://cdn.youcan.shop/stores/ff5389aab45cf830c1323f4935d241b5/others/KIAsM8MR4qUXyKEVMCCHHO5XUwQL9HVxtUR5A7Pi.jpg',
+    'https://cdn.youcan.shop/stores/ff5389aab45cf830c1323f4935d241b5/others/zNcHth6rmfzmDAu7LUhIMN0aUpj0uFcQyMAjWiCu.jpg',
+    'https://cdn.youcan.shop/stores/ff5389aab45cf830c1323f4935d241b5/others/PJiuPPZCIbhDCuEtGs4kAYLWoaDLJdIYTxEwSIZ0.jpg'
+  ];
+
+  function switchHeroColor(idx, el) {
+    document.getElementById('heroMainImg').src = PHOTOS[idx];
+    document.querySelectorAll('.cdot').forEach((d,i) => d.classList.toggle('active', i===idx));
+  }
+
+  /* Formspree AJAX */
+  var form = document.getElementById("orderForm");
+  if (form) {
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      var btn = document.getElementById("submitBtn");
+      btn.textContent = "23f3 Envoi en cours...";
+      btn.disabled = true;
+      try {
+        var res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } });
+        if (res.ok) {
+          form.reset();
+          document.getElementById("formSuccess").style.display = "block";
+          btn.style.display = "none";
+        } else { btn.textContent = "274c Erreur 2014 r00e9essaie"; btn.disabled = false; }
+      } catch(err) { btn.textContent = "274c Erreur 2014 r00e9essaie"; btn.disabled = false; }
+    });
+  }
+
+  function setActive(el, idx) {
+    document.querySelectorAll('.gallery-item').forEach(g => g.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('heroMainImg').src = PHOTOS[idx];
+    document.querySelectorAll('.cdot').forEach((d,i) => d.classList.toggle('active', i===idx));
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Look Modeste Élégant — Dantel Takım | Kenimoda</title>
+  <meta name="description" content="Ensemble dantelé élégant, 4 couleurs, tailles 38-46. Livraison partout au Maroc 420 DH." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink:   #0E0A0C;
+      --cream: #FAF6F0;
+      --warm:  #F2EAE0;
+      --gold:  #B8924A;
+      --gold2: #D4AC6E;
+      --rose:  #8B2635;
+      --rose2: #A83040;
+      --sand:  #E2D8CC;
+      --muted: #9A8A7A;
+      --wa:    #25D366;
+      --navy:  #1B2A4A;
+      --brown: #2C1810;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* TOPBAR */
+    .topbar {
+      background: var(--ink);
+      color: var(--gold2);
+      text-align: center;
+      font-size: .68rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: .6rem 1rem;
+      font-weight: 500;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,246,240,.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--sand);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .85rem 2.5rem;
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem; font-weight: 700;
+      color: var(--ink); text-decoration: none;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .logo em { color: var(--gold); font-style: italic; }
+    .logo svg { flex-shrink: 0; }
+    .nav-cta {
+      background: var(--rose); color: #fff;
+      padding: .55rem 1.4rem; border-radius: 4px;
+      font-size: .78rem; font-weight: 600;
+      text-decoration: none; letter-spacing: .5px;
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--rose2); }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1.1fr .9fr;
+      min-height: 95vh; background: var(--ink);
+      position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 60% 30%, rgba(184,146,74,.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    /* diagonal split */
+    .hero-left {
+      position: relative; overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+    }
+    .hero-left img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+      transition: transform 8s ease;
+      display: block;
+    }
+    .hero-left:hover img { transform: scale(1.04); }
+    .hero-left-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, transparent 60%, rgba(14,10,12,.6) 100%);
+    }
+
+    .hero-right {
+      display: flex; flex-direction: column;
+      justify-content: center; padding: 3.5rem 3rem 3.5rem 2rem;
+      position: relative; z-index: 2;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(184,146,74,.1); border: 1px solid rgba(184,146,74,.3);
+      color: var(--gold2); font-size: .65rem; letter-spacing: 2.5px;
+      text-transform: uppercase; padding: .3rem .9rem;
+      border-radius: 2px; margin-bottom: 1.5rem; width: fit-content;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 700; color: #fff;
+      line-height: 1.1; margin-bottom: .8rem;
+    }
+    .hero-title em { color: var(--gold2); font-style: italic; font-weight: 400; }
+    .hero-desc {
+      color: rgba(255,255,255,.5);
+      font-size: .9rem; line-height: 1.8;
+      max-width: 340px; margin-bottom: 1.8rem;
+      font-weight: 300;
+    }
+
+    /* COLOR SWATCHES */
+    .color-row { display: flex; gap: .7rem; margin-bottom: 2rem; align-items: center; }
+    .color-label-txt { font-size: .72rem; color: rgba(255,255,255,.4); letter-spacing: 1px; text-transform: uppercase; margin-right: .3rem; }
+    .cswatch {
+      width: 28px; height: 28px; border-radius: 50%;
+      cursor: pointer; border: 2.5px solid transparent;
+      transition: all .2s; position: relative;
+    }
+    .cswatch.active, .cswatch:hover {
+      border-color: rgba(255,255,255,.8);
+      transform: scale(1.15);
+    }
+    .cswatch.active::after {
+      content: '✓'; position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .6rem; color: white; font-weight: 700;
+    }
+
+    .hero-price-row {
+      display: flex; align-items: baseline; gap: .8rem; margin-bottom: 1.8rem;
+    }
+    .hero-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem; font-weight: 700; color: var(--gold2);
+    }
+    .hero-price-note { font-size: .75rem; color: rgba(255,255,255,.35); font-weight: 300; }
+
+    .hero-btns { display: flex; flex-direction: column; gap: .7rem; max-width: 320px; }
+    .btn-main {
+      background: var(--rose); color: #fff; border: none;
+      border-radius: 4px; padding: .95rem 1.8rem;
+      font-size: .95rem; font-weight: 600; cursor: pointer;
+      font-family: 'Jost', sans-serif;
+      text-decoration: none; display: flex; align-items: center;
+      justify-content: center; gap: .5rem;
+      transition: all .2s; letter-spacing: .3px;
+    }
+    .btn-main:hover { background: var(--rose2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(139,38,53,.4); }
+    .btn-wa {
+      background: var(--wa); color: #fff; border: none;
+      border-radius: 4px; padding: .85rem 1.8rem;
+      font-size: .9rem; font-weight: 600; cursor: pointer;
+      font-family: 'Jost', sans-serif;
+      text-decoration: none; display: flex; align-items: center;
+      justify-content: center; gap: .5rem; transition: all .2s;
+    }
+    .btn-wa:hover { background: #1da851; }
+
+    .hero-trust {
+      display: flex; gap: 1.2rem; margin-top: 1.8rem; flex-wrap: wrap;
+    }
+    .tbadge { display: flex; align-items: center; gap: .35rem; font-size: .72rem; color: rgba(255,255,255,.35); }
+
+    /* MARQUEE */
+    .marquee { background: var(--gold); padding: .65rem 0; overflow: hidden; }
+    .mq-track {
+      display: flex; gap: 3rem;
+      animation: mq 22s linear infinite; white-space: nowrap;
+    }
+    .mq-track span { font-size: .68rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--ink); flex-shrink: 0; }
+    @keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* GALLERY */
+    .gallery-sec { background: #fff; padding: 4rem 3rem; }
+    .sec-eyebrow { font-size: .65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: .5rem; }
+    .sec-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--ink); margin-bottom: .3rem; }
+    .sec-sub { color: var(--muted); font-size: .88rem; margin-bottom: 2rem; font-weight: 300; }
+
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2.5rem;
+    }
+    .gcard {
+      border-radius: 8px; overflow: hidden;
+      aspect-ratio: 3/4; cursor: pointer;
+      border: 2px solid transparent; transition: all .25s;
+      position: relative;
+    }
+    .gcard.active, .gcard:hover { border-color: var(--gold); }
+    .gcard img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .4s; }
+    .gcard:hover img { transform: scale(1.04); }
+    .gcard-label {
+      position: absolute; bottom: .5rem; left: 50%; transform: translateX(-50%);
+      background: rgba(14,10,12,.75); color: #fff;
+      font-size: .62rem; padding: .2rem .7rem; border-radius: 3px;
+      white-space: nowrap; font-weight: 500; letter-spacing: .5px;
+    }
+
+    /* VIDEO */
+    .video-sec { background: var(--warm); padding: 4rem 3rem; }
+    .video-wrapper {
+      max-width: 420px; margin: 2rem auto 0;
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(14,10,12,.2);
+      border: 1px solid var(--sand);
+    }
+    .video-wrapper video { width: 100%; display: block; }
+
+    /* SPECS */
+    .specs-sec { background: #fff; padding: 4rem 3rem; }
+    .specs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
+    .spec-card {
+      background: var(--warm); border-radius: 8px;
+      padding: 1.4rem 1rem; text-align: center;
+      border: 1px solid var(--sand);
+    }
+    .spec-icon { font-size: 1.5rem; margin-bottom: .5rem; }
+    .spec-val { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); }
+    .spec-lbl { font-size: .7rem; color: var(--muted); margin-top: .2rem; font-weight: 300; }
+
+    /* ORDER BOX */
+    .order-box {
+      margin: 3rem 0 0;
+      background: var(--ink); border-radius: 10px;
+      padding: 2.2rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .order-price { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 700; color: var(--gold2); line-height: 1; }
+    .order-note { color: rgba(255,255,255,.4); font-size: .78rem; margin-top: .3rem; font-weight: 300; }
+    .order-btns { display: flex; flex-direction: column; gap: .7rem; min-width: 260px; }
+
+    /* PROMO */
+    .promo-sec {
+      background: linear-gradient(135deg, #1a0a10 0%, #2d1020 100%);
+      padding: 3rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .promo-left h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: .4rem; font-weight: 700; }
+    .promo-left p { color: rgba(255,255,255,.55); font-size: .88rem; font-weight: 300; }
+    .promo-code { background: var(--gold); color: var(--ink); font-weight: 700; padding: .4rem 1.1rem; border-radius: 4px; display: inline-block; margin-top: .8rem; letter-spacing: 3px; font-size: 1rem; }
+    .promo-stats { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .pstat { text-align: center; background: rgba(255,255,255,.07); border-radius: 8px; padding: .9rem 1.2rem; }
+    .pstat strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: var(--gold2); font-weight: 700; }
+    .pstat span { color: rgba(255,255,255,.45); font-size: .7rem; }
+
+    /* TESTIMONIALS */
+    .testi-sec { padding: 4rem 3rem; background: var(--cream); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+    .tcard { background: #fff; border-radius: 8px; border: 1px solid var(--sand); padding: 1.5rem; }
+    .tcard-stars { color: var(--gold); font-size: .9rem; margin-bottom: .7rem; letter-spacing: 2px; }
+    .tcard-text { font-size: .85rem; line-height: 1.7; color: #4a3a2e; font-style: italic; margin-bottom: 1rem; font-weight: 300; }
+    .tcard-name { font-size: .78rem; font-weight: 600; color: var(--ink); }
+    .tcard-city { font-size: .7rem; color: var(--muted); }
+
+    /* CONTACT */
+    .contact-sec {
+      background: var(--ink); padding: 4rem 3rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .contact-left h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #fff; margin-bottom: .8rem; font-weight: 700; }
+    .contact-left p { color: rgba(255,255,255,.45); line-height: 1.8; margin-bottom: 1.5rem; font-size: .88rem; font-weight: 300; }
+    .cinfo-list { display: flex; flex-direction: column; gap: .8rem; }
+    .cinfo-item { display: flex; align-items: center; gap: .8rem; color: rgba(255,255,255,.6); font-size: .85rem; }
+    .cinfo-ico { width: 36px; height: 36px; border-radius: 6px; background: rgba(184,146,74,.12); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .cform { display: flex; flex-direction: column; gap: .85rem; }
+    .cform input, .cform select, .cform textarea {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 6px; padding: .85rem 1rem;
+      color: #fff; font-family: 'Jost', sans-serif;
+      font-size: .88rem; outline: none; resize: none; transition: border-color .2s; width: 100%;
+    }
+    .cform select option { background: #1a1018; color: #fff; }
+    .cform input::placeholder, .cform textarea::placeholder { color: rgba(255,255,255,.22); }
+    .cform input:focus, .cform select:focus, .cform textarea:focus { border-color: var(--gold); }
+    .cform-row { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
+    .cform-submit {
+      background: var(--rose); color: #fff; border: none; border-radius: 6px;
+      padding: 1rem; font-weight: 600; cursor: pointer;
+      font-family: 'Jost', sans-serif; font-size: .95rem; transition: background .2s;
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+    }
+    .cform-submit:hover { background: var(--rose2); }
+    .form-success {
+      display: none; background: rgba(37,211,102,.12);
+      border: 1px solid #25D366; border-radius: 8px;
+      padding: 1rem; text-align: center;
+      color: #25D366; font-weight: 500; font-size: .9rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #080508; padding: 1.5rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: .8rem;
+    }
+    .flogo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--gold); display: flex; align-items: center; gap: 6px; }
+    .flogo em { color: var(--rose2); font-style: italic; }
+    footer p { color: rgba(255,255,255,.2); font-size: .75rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { height: 50vh; clip-path: none; }
+      .hero-right { padding: 2rem 1.5rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .specs-grid { grid-template-columns: repeat(2, 1fr); }
+      .testi-grid { grid-template-columns: 1fr; }
+      .contact-sec { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+      .gallery-sec, .video-sec, .specs-sec, .promo-sec, .testi-sec { padding: 3rem 1.5rem; }
+      .order-box { flex-direction: column; }
+      .order-btns { width: 100%; }
+      nav { padding: .85rem 1.2rem; }
+      footer { padding: 1.5rem; }
+      .cform-row { grid-template-columns: 1fr; }
+      .promo-stats { justify-content: center; }
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1765728384575493');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1765728384575493&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">✦ Livraison 24–48h partout au Maroc · Paiement à la livraison · High Quality ✦</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <svg width="26" height="26" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 8C20 8 10 16 8 26c4-2 8-2 12 0-6 4-10 10-10 18 0 2 4-2 8-6 0 6 2 12 8 16 2-4 2-10 0-14 4 4 10 6 16 4-2-4-6-8-10-10 6 0 12-4 14-10-4 0-8 2-10 4 2-4 2-10-4-14 6 0 10 4 12 8 2-8-2-14-12-14z" fill="#B8924A"/>
+    </svg>
+    Keni<em>moda</em>
+  </a>
+  <a href="#commande" class="nav-cta">Commander →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <img id="heroImg"
+      src="https://res.cloudinary.com/dvk05i17f/image/upload/v1780746898/42_d7sjya.jpg"
+      alt="Look Modeste Élégant — Kenimoda" />
+    <div class="hero-left-overlay"></div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-tag">✦ Collection 2026 · Nouveau</div>
+    <h1 class="hero-title">
+      Look Modeste<br><em>Élégant</em>
+    </h1>
+    <p class="hero-desc">
+      Ensemble dantelé 2 pièces — jupe longue + haut boutonné.<br>
+      Tissu dentelle doublé · Haute qualité · 4 couleurs 🇲🇦
+    </p>
+
+    <div class="color-row">
+      <span class="color-label-txt">Couleur :</span>
+      <div class="cswatch active" style="background:#7A1A2E" title="Bordeaux" onclick="switchColor(0,this,'Bordeaux')"></div>
+      <div class="cswatch" style="background:#1B2A4A" title="Bleu Marine" onclick="switchColor(1,this,'Bleu Marine')"></div>
+      <div class="cswatch" style="background:#2C1810" title="Brun" onclick="switchColor(2,this,'Brun')"></div>
+      <div class="cswatch" style="background:#0E0A0C" title="Noir" onclick="switchColor(3,this,'Noir')"></div>
+      <span id="colorTxt" style="font-size:.75rem;color:rgba(255,255,255,.5);margin-left:.3rem;">Bordeaux</span>
+    </div>
+
+    <div class="hero-price-row">
+      <div class="hero-price">420 DH</div>
+      <div class="hero-price-note">Paiement à la livraison</div>
+    </div>
+
+    <div class="hero-btns">
+      <a href="#commande" class="btn-main">📩 Commander maintenant</a>
+      <a href="https://wa.me/212612449474?text=Salam%20Kenimoda%2C%20bghit%20ncommandi%20Look%20Modeste%20Elegant%20420DH" target="_blank" class="btn-wa">💬 Commander via WhatsApp</a>
+    </div>
+
+    <div class="hero-trust">
+      <div class="tbadge">🚚 Livraison Maroc</div>
+      <div class="tbadge">💳 Paiement livraison</div>
+      <div class="tbadge">⭐ 4.9/5</div>
+      <div class="tbadge">🌿 Qualité premium</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="mq-track">
+    <span>✦ Tissu Dentelle Doublé</span>
+    <span>✦ 4 Couleurs Disponibles</span>
+    <span>✦ Tailles 38 à 46</span>
+    <span>✦ Livraison partout au Maroc</span>
+    <span>✦ Paiement à la livraison</span>
+    <span>✦ High Quality</span>
+    <span>✦ Tissu Dentelle Doublé</span>
+    <span>✦ 4 Couleurs Disponibles</span>
+    <span>✦ Tailles 38 à 46</span>
+    <span>✦ Livraison partout au Maroc</span>
+    <span>✦ Paiement à la livraison</span>
+    <span>✦ High Quality</span>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery-sec" id="galerie">
+  <div class="sec-eyebrow">Kenimoda · Look Modeste Élégant</div>
+  <h2 class="sec-title">Toutes les couleurs</h2>
+  <p class="sec-sub">Clique pour voir chaque couleur en détail</p>
+
+  <div class="gallery-grid">
+    <div class="gcard active" onclick="selectGallery(this,0)">
+      <img src="https://res.cloudinary.com/dvk05i17f/image/upload/v1780746898/42_d7sjya.jpg" alt="Bordeaux" />
+      <div class="gcard-label">Bordeaux</div>
+    </div>
+    <div class="gcard" onclick="selectGallery(this,1)">
+      <img src="https://res.cloudinary.com/dvk05i17f/image/upload/v1780746898/photo_2026-05-24_11-26-00_kd8rg2.jpg" alt="Bleu Marine" />
+      <div class="gcard-label">Bleu Marine</div>
+    </div>
+    <div class="gcard" onclick="selectGallery(this,2)">
+      <img src="https://res.cloudinary.com/dvk05i17f/image/upload/v1780746898/photo_2026-05-24_11-25-55_baxkqd.jpg" alt="Brun" />
+      <div class="gcard-label">Brun</div>
+    </div>
+    <div class="gcard" onclick="selectGallery(this,3)">
+      <img src="https://res.cloudinary.com/dvk05i17f/image/upload/v1780746898/420_n0nn0n.jpg" alt="Noir" />
+      <div class="gcard-label">Noir</div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-sec">
+  <div class="sec-eyebrow">Vidéo produit</div>
+  <h2 class="sec-title">Voir le mouvement</h2>
+  <p class="sec-sub">La fluidité du tissu dentelle en mouvement</p>
+  <div class="video-wrapper">
+    <video controls playsinline preload="metadata" poster="https://res.cloudinary.com/dvk05i17f/image/upload/v1780746898/42_d7sjya.jpg">
+      <source src="https://res.cloudinary.com/dvk05i17f/video/upload/v1780747352/420_hanp04.mp4" type="video/mp4" />
+    </video>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="specs-sec">
+  <div class="sec-eyebrow">Détails & Qualité</div>
+  <h2 class="sec-title">Ce qui rend cette pièce unique</h2>
+  <div class="specs-grid">
+    <div class="spec-card">
+      <div class="spec-icon">📏</div>
+      <div class="spec-val">95–100 cm</div>
+      <div class="spec-lbl">Longueur jupe</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">🌸</div>
+      <div class="spec-val">Dentelle</div>
+      <div class="spec-lbl">Tissu doublé premium</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">📦</div>
+      <div class="spec-val">38–46</div>
+      <div class="spec-lbl">Tailles disponibles</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">🎨</div>
+      <div class="spec-val">4 couleurs</div>
+      <div class="spec-lbl">Bordeaux · Marine · Brun · Noir</div>
+    </div>
+  </div>
+
+  <div class="order-box">
+    <div>
+      <div class="order-price">420 DH</div>
+      <div class="order-note">🚚 Livraison incluse · Paiement à la livraison</div>
+    </div>
+    <div class="order-btns">
+      <a href="#commande" class="btn-main">📩 Commander maintenant</a>
+      <a href="https://wa.me/212612449474?text=Salam%20Kenimoda%2C%20bghit%20ncommandi%20Look%20Modeste%20Elegant%20420DH" target="_blank" class="btn-wa">💬 Commander via WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<div class="promo-sec">
+  <div class="promo-left">
+    <h2>Commande maintenant,<br>livrée en 48h ⚡</h2>
+    
+    
+  </div>
+  <div class="promo-stats">
+    <div class="pstat"><strong>500+</strong><span>Clientes</span></div>
+    <div class="pstat"><strong>48h</strong><span>Livraison</span></div>
+    <div class="pstat"><strong>4.9★</strong><span>Avis</span></div>
+    <div class="pstat"><strong>4</strong><span>Couleurs</span></div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec" id="avis">
+  <div class="sec-eyebrow">Avis clients</div>
+  <h2 class="sec-title">Ce que disent nos clientes</h2>
+  <p class="sec-sub">Avis réels — chno galat les clientes dyalna 🇲🇦</p>
+  <div class="testi-grid">
+    <div class="tcard">
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-text">"La robe est magnifique ! Le tissu dentelle est d'une qualité exceptionnelle. Je l'ai prise en bordeaux et tout le monde me demande où je l'ai achetée !"</p>
+      <div class="tcard-name">Fatima Z.</div>
+      <div class="tcard-city">Casablanca</div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-text">"Livraison très rapide, l'emballage était soigné. Le bleu marine est encore plus beau en vrai. La coupe est parfaite pour le voile !"</p>
+      <div class="tcard-name">Khadija M.</div>
+      <div class="tcard-city">Rabat</div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-text">"3jbatni bzzaf ! Khdmt 42 w waqfet mzyana. La dentelle doublée est vraiment confortable à porter. Merci Kenimoda !"</p>
+      <div class="tcard-name">Samira A.</div>
+      <div class="tcard-city">Marrakech</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / COMMANDE -->
+<section class="contact-sec" id="commande">
+  <div class="contact-left">
+    <h2>Passer ta<br><span style="color:var(--gold2)">commande</span></h2>
+    <p>Remplis le formulaire — on te confirme ta commande sur WhatsApp et on livre chez toi en 48h !</p>
+    <div class="cinfo-list">
+      <div class="cinfo-item"><div class="cinfo-ico">💬</div><span>WhatsApp : +212 612 449 474</span></div>
+      <div class="cinfo-item"><div class="cinfo-ico">📸</div><span>Instagram : @kenimoda.ma</span></div>
+      <div class="cinfo-item"><div class="cinfo-ico">📍</div><span>Livraison partout au Maroc 🇲🇦</span></div>
+      <div class="cinfo-item"><div class="cinfo-ico">⏱️</div><span>Livraison en 24–48h</span></div>
+    </div>
+  </div>
+
+  <form class="cform" id="orderForm" action="https://formspree.io/f/mwvzjgqe" method="POST">
+    <input type="hidden" name="produit" value="Look Modeste Élégant — Dantel Takım — 420 DH" />
+    <input type="hidden" name="couleur_hero" id="hiddenColor" value="Bordeaux" />
+    <input type="hidden" name="taille_hero" id="hiddenSize" value="" />
+    <input type="text" name="prenom" placeholder="Ton prénom — smiytek" required />
+    <input type="tel" name="whatsapp" placeholder="Numéro WhatsApp — raqm dyalek" required />
+    <div class="cform-row">
+      <select name="couleur" id="formCouleur" onchange="document.getElementById('hiddenColor').value=this.value">
+        <option value="" disabled selected>Couleur — choisir</option>
+        <option value="Bordeaux">🔴 Bordeaux</option>
+        <option value="Bleu Marine">🔵 Bleu Marine</option>
+        <option value="Brun">🟤 Brun</option>
+        <option value="Noir">⚫ Noir</option>
+      </select>
+      <select name="taille" id="formTaille" onchange="document.getElementById('hiddenSize').value=this.value;document.getElementById('sizeTxt') && (document.getElementById('sizeTxt').textContent=this.value)">
+        <option value="" disabled selected>Taille — choisir</option>
+        <option value="38">38</option>
+        <option value="40">40</option>
+        <option value="42">42</option>
+        <option value="44">44</option>
+        <option value="46">46</option>
+      </select>
+    </div>
+    <input type="text" name="adresse" placeholder="Ville de livraison — mdina dyalek" required />
+    <textarea name="message" rows="2" placeholder="Message (optionnel)..."></textarea>
+    <button type="submit" class="cform-submit" id="submitBtn">
+      📩 Confirmer ma commande — 420 DH
+    </button>
+    <div class="form-success" id="formSuccess">
+      ✅ Commande envoyée ! On te contacte bientôt sur WhatsApp 🎉
+    </div>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="flogo">
+    <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
+      <path d="M32 8C20 8 10 16 8 26c4-2 8-2 12 0-6 4-10 10-10 18 0 2 4-2 8-6 0 6 2 12 8 16 2-4 2-10 0-14 4 4 10 6 16 4-2-4-6-8-10-10 6 0 12-4 14-10-4 0-8 2-10 4 2-4 2-10-4-14 6 0 10 4 12 8 2-8-2-14-12-14z" fill="#B8924A"/>
+    </svg>
+    Keni<em>moda</em>
+  </div>
+  <p>© 2026 Kenimoda — Mode Féminine Maroc 🇲🇦</p>
+  <p style="color:rgba(255,255,255,.15);font-size:.7rem;">kenimoda.com</p>
+</footer>
+
+<script>
+  const IMGS = [
+    'https://res.cloudinary.com/dvk05i17f/image/upload/v1780746898/42_d7sjya.jpg',
+    'https://res.cloudinary.com/dvk05i17f/image/upload/v1780746898/photo_2026-05-24_11-26-00_kd8rg2.jpg',
+    'https://res.cloudinary.com/dvk05i17f/image/upload/v1780746898/photo_2026-05-24_11-25-55_baxkqd.jpg',
+    'https://res.cloudinary.com/dvk05i17f/image/upload/v1780746898/420_n0nn0n.jpg'
+  ];
+
+  function syncFormColor(name) {
+    var hc = document.getElementById("hiddenColor");
+    var fc = document.getElementById("formCouleur");
+    if (hc) hc.value = name;
+    if (fc) fc.value = name;
+  }
+
+  function switchColor(idx, el, name) {
+    document.getElementById("heroImg").src = IMGS[idx];
+    document.querySelectorAll(".cswatch").forEach((s,i) => s.classList.toggle("active", i===idx));
+    document.getElementById("colorTxt").textContent = name;
+    document.querySelectorAll(".gcard").forEach((g,i) => g.classList.toggle("active", i===idx));
+    syncFormColor(name);
+  }
+
+  function selectGallery(el, idx) {
+    document.querySelectorAll(".gcard").forEach(g => g.classList.remove("active"));
+    el.classList.add("active");
+    document.getElementById("heroImg").src = IMGS[idx];
+    document.querySelectorAll(".cswatch").forEach((s,i) => s.classList.toggle("active", i===idx));
+    const names = ["Bordeaux","Bleu Marine","Brun","Noir"];
+    var name = names[idx];
+    document.getElementById("colorTxt").textContent = name;
+    syncFormColor(name);
+  }
+
+  /* Formspree */
+  const form = document.getElementById('orderForm');
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = '⏳ Envoi en cours...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        document.getElementById('formSuccess').style.display = 'block';
+        btn.style.display = 'none';
+      } else {
+        btn.textContent = '❌ Erreur — réessaie';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = '❌ Erreur — réessaie';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>
