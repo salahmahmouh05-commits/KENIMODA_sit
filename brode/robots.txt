@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-Allow: /assets/
-Disallow: /assets/images/*.json$
 
-# Search engine bots are welcome to index everything on this landing page.
-Sitemap: https://ensemble-brode-premium.pages.dev/sitemap.xml
+Sitemap: https://kenimoda.com/sitemap.xml
