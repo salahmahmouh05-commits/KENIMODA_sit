@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ensemble-brode-premium.pages.dev/sitemap.xml
