@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ensemble-brode-premium.pages.dev/</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://ensemble-brode-premium.pages.dev/assets/images/rose-1.jpg</image:loc>
-      <image:title>Ensemble Brodé Femme Premium - Rose</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://ensemble-brode-premium.pages.dev/assets/images/bleu-1.jpg</image:loc>
-      <image:title>Ensemble Brodé Femme Premium - Bleu Ciel</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://ensemble-brode-premium.pages.dev/assets/images/jaune-1.jpg</image:loc>
-      <image:title>Ensemble Brodé Femme Premium - Jaune</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://ensemble-brode-premium.pages.dev/assets/images/marron-2.jpg</image:loc>
-      <image:title>Ensemble Brodé Femme Premium - Marron</image:title>
-    </image:image>
+    <loc>https://kenimoda.com/brode/</loc>
+    <lastmod>2026-07-10</lastmod>
   </url>
 </urlset>
-
