@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /brode/
+Allow: /brode/assets/
+
+# Search engine bots are welcome to index everything on this landing page.
+Sitemap: https://kenimoda.com/brode/sitemap.xml
